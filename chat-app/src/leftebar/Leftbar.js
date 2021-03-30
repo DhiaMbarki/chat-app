@@ -5,7 +5,7 @@ import {SearchOutlined} from "@material-ui/icons";
 import ChatSide from "../chats/ChatSide";
 
 
-function Sidebar() {
+function Leftbar() {
   return (
     <div className="sidebar">
       <div className="sidebar_header">
@@ -20,7 +20,7 @@ function Sidebar() {
             </div>
 
       <div className="sidebar_chats">
-          <ChatSide/>
+          <ChatSide addNewChat/>
           <ChatSide/>
           <ChatSide/>
           <ChatSide/>
@@ -31,4 +31,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default Leftbar;

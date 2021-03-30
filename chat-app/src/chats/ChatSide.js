@@ -11,7 +11,7 @@ function ChatSide({id,name,addNewChat}) {
     }, []);
 
     const createChat = () => {
-        const roomName = prompt("Please Enter Name for Chat");
+        const roomName = prompt("Create your Chat here");
 
         if(roomName){
             //dtabase stuff ...
@@ -22,7 +22,7 @@ function ChatSide({id,name,addNewChat}) {
             <div className="sidebarChat">
                 <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
                 <div className="sidebarChat_info">
-                    <h2>{name}</h2>
+                    <h2>Romm name</h2>
                     <p>last message ...</p>
                 </div>
             </div>
