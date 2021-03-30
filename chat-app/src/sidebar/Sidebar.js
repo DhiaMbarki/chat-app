@@ -1,6 +1,6 @@
 import React from "react";
 import "./sidebar.css";
-import { Avatar, IconButton } from "@material-ui/core";
+import { Avatar} from "@material-ui/core";
 import {SearchOutlined} from "@material-ui/icons";
 import ChatSide from "../chats/ChatSide";
 
@@ -21,14 +21,10 @@ function Sidebar() {
 
       <div className="sidebar_chats">
           <ChatSide/>
-        <h1>Chat</h1>
-        <h1>Chat</h1>
-        <h1>Chat</h1>
-        <h1>Chat</h1>
-        <h1>Chat</h1>
-        <h1>Chat</h1>
-        <h1>Chat</h1>
-        <h1>Chat</h1>
+          <ChatSide/>
+          <ChatSide/>
+          <ChatSide/>
+       
 
       </div>
     </div>
