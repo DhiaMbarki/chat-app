@@ -11,24 +11,26 @@ function ChatSide({id,name,addNewChat}) {
     }, []);
 
     const createChat = () => {
-        const roomName = prompt("Create your room Chat here 😃");
+        const roomName = prompt("Create your room Chat here 😃"); prompt("description 😃");
+
 
         if(roomName){
             //dtabase stuff ...
         }
     };
+    
 
     return !addNewChat ? (
             <div className="sidebarChat">
                 <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`}/>
                 <div className="sidebarChat_info">
                     <h2>Romm name</h2>
-                    <p>last message ...</p>
+                    <p>message ...</p>
                 </div>
             </div>
         
     ) : (
-        <div onClick={createChat} className="sidebarChat">
+        <div  onClick={createChat} className="sidebarChat">
             <h3 className="add-new-chat-title">Add New Chat</h3>
         </div>
     )

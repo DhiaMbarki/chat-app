@@ -20,7 +20,7 @@ function Leftbar() {
             </div>
 
       <div className="sidebar_chats">
-          <ChatSide addNewChat/>
+          <ChatSide addNewChat />
           <ChatSide/>
           <ChatSide/>
           <ChatSide/>
