@@ -1,5 +1,6 @@
 .sidebar{
     flex: 0.35;
+    background-color: rgb(212, 206, 206);
 }
 
 .sidebar_search{
@@ -22,10 +23,12 @@
 .sidebar_searchContainer{
     display: flex;
     align-items: center;
-    background-color: white;
-    width: 100%;
-    height: 35px;
-    border-radius: 20px;
+    background-color: #f6f6f6;
+    width: 300%;
+    height: 50px;
+    margin-left: 110px;
+    
+
 }
 
 .sidebar_header{
@@ -33,6 +36,10 @@
     justify-content: space-between;
     padding: 20px;
     border-right: 1px solid lightgray;
+    position: relative;
+    bottom: -240px;
+    /* background-color: rgb(32, 31, 31); */
+
 }
 
 .sidebar_headerRight{
@@ -45,4 +52,7 @@
 .sidebar_headerRight > .MuiSvgIcon-root {
     margin-right: 2vw;
     font-size: 20px !important;
+}
+.sidebar_chats{
+    color: black;
 }

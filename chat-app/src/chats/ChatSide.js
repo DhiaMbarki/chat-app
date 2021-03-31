@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {Avatar} from "@material-ui/core";
 import './chat.css';
+import swal from 'sweetalert';
+import AddBoxIcon from '@material-ui/icons/AddBox';
 
 function ChatSide({id,name,addNewChat}) {
     const [seed, setSeed] = useState("");
@@ -11,7 +13,10 @@ function ChatSide({id,name,addNewChat}) {
     }, []);
 
     const createChat = () => {
-        const roomName = prompt("Create your room Chat here 😃"); prompt("description 😃");
+        const roomName = swal("Write something here:", {
+            content: "input",
+          })
+          
 
 
         if(roomName){
@@ -31,7 +36,7 @@ function ChatSide({id,name,addNewChat}) {
         
     ) : (
         <div  onClick={createChat} className="sidebarChat">
-            <h3 className="add-new-chat-title">Add New Chat</h3>
+            <h3 className="add-new-chat-title"><AddBoxIcon/><h3>Add Chat-room</h3></h3>
         </div>
     )
 }
