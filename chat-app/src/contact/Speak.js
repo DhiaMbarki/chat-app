@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import "./speak.css"
 import { Avatar,IconButton} from "@material-ui/core";
-import {AttachFile, MoreVert, SearchOutlined} from '@material-ui/icons';
-
+import { MoreVert, SearchOutlined} from '@material-ui/icons';
+import BlockIcon from '@material-ui/icons/Block';
+import CallIcon from '@material-ui/icons/Call';
 function Speak() {
     const [seed, setSeed] = useState("");
     
@@ -22,10 +23,10 @@ function Speak() {
             
             <div className="chat_headerRight">
                     <IconButton>
-                        <SearchOutlined/>
+                        <CallIcon/>
                     </IconButton>
                     <IconButton>
-                        <AttachFile/>
+                        <BlockIcon/>
                     </IconButton>
                     <IconButton>
                         <MoreVert/>
