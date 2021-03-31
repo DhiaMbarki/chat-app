@@ -8,11 +8,14 @@ import ChatSide from "../chats/ChatSide";
 function Leftbar() {
   return (
     <div className="sidebar">
+       <div className="sidebar_header">
+        <Avatar />
       
+      </div>
       <div className="sidebar_search">
                 <div className="sidebar_searchContainer">
                     <SearchOutlined />
-                    <input type="text" placeholder="Search"/>
+                    <input type="text" placeholder="Search" className="mov"/>
                 </div>
             </div>
 
@@ -24,10 +27,7 @@ function Leftbar() {
        
 
       </div>
-      <div className="sidebar_header">
-        <Avatar />
-      
-      </div>
+     
     </div>
   );
 }
