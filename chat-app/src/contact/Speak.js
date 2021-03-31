@@ -15,10 +15,11 @@ function Speak() {
         <div className="chat">
             <div className="chat_header">
             <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`}/>
-            <div className="chat-headerInfo">
+            <div className="chat_headerInfo">
                 <h3>Romm name</h3>
                 <p>Last view at ...</p>
-            </div>
+                </div>
+            
             <div className="chat_headerRight">
                     <IconButton>
                         <SearchOutlined/>
