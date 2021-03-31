@@ -10,6 +10,7 @@
     align-items: center;
     border-bottom: 1px solid lightgray;
     /* margin-right: 300px; */
+    background-color: rgb(248, 241, 241);
 }
 .chat_headerInfo{
     flex: 1;
@@ -30,9 +31,29 @@
 
 .chat_body{
     flex: 1;
-    /* background-image: url('https://i.pinimg.com/originals/32/41/58/324158f0dcb771015f0028b864ab63d9.jpg'); */
+    background-color:rgb(240, 238, 231);
     background-repeat: repeat;
     background-position: center;
     padding: 30px;
     overflow:scroll;
+}
+.chat_message{
+    position: relative;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    width: fit-content;
+    margin-bottom: 30px;
+}
+
+.chat_name{
+    position: absolute;
+    top:-15px;
+    font-weight: 800;
+    font-size: xx-small;
+}
+.chat_timestamp{
+    margin-left: 10px;
+    font-size: xx-small;
 }

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import "./speak.css"
 import { Avatar,IconButton} from "@material-ui/core";
-import { MoreVert, SearchOutlined} from '@material-ui/icons';
-import BlockIcon from '@material-ui/icons/Block';
+import { Message, MoreVert, SearchOutlined} from '@material-ui/icons';
+import VideoCallIcon from '@material-ui/icons/VideoCall';
 import CallIcon from '@material-ui/icons/Call';
 function Speak() {
     const [seed, setSeed] = useState("");
@@ -24,7 +24,7 @@ function Speak() {
             
             <div className="chat_headerRight">
                     <IconButton>
-                    <MoreVert/>
+                    <VideoCallIcon/>
                     </IconButton>
                    
                     <IconButton>
@@ -34,7 +34,13 @@ function Speak() {
                 </div>
             </div>
             <div className="chat_body">
-
+<p className="chat_message">
+<span className="chat_name">Dhia Mbarki</span>
+Yo Yo i m here
+<span className="chat_timestamp">
+3:52pm 
+</span>
+</p>
             </div>
             <div className="chat_footer"></div>
         </div>
