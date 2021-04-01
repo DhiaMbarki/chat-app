@@ -1,5 +1,5 @@
 import React from "react";
-import "./sidebar.css";
+import "./leftbar.css";
 import { Avatar} from "@material-ui/core";
 import {SearchOutlined} from "@material-ui/icons";
 import ChatSide from "../chats/ChatSide";
@@ -21,9 +21,7 @@ function Leftbar() {
 
       <div className="sidebar_chats">
           <ChatSide addNewChat />
-          <ChatSide/>
-          <ChatSide/>
-          <ChatSide/>
+        
        
 
       </div>
