@@ -4,7 +4,7 @@ import './chat.css';
 import swal from 'sweetalert';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 
-function ChatSide({id,name,addNewChat}) {
+function ChatSide({id,user,addNewChat}) {
     const [seed, setSeed] = useState("");
     
    
@@ -29,7 +29,7 @@ function ChatSide({id,name,addNewChat}) {
             <div className="sidebarChat">
                 <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`}/>
                 <div className="sidebarChat_info">
-                    <h2>Romm name</h2>
+                    <h2>{user}</h2>
                     <p>message ...</p>
                 </div>
             </div>

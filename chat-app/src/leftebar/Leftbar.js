@@ -1,25 +1,22 @@
-import React, {useState,useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import "./leftbar.css";
 import { Avatar } from "@material-ui/core";
 import { SearchOutlined } from "@material-ui/icons";
 import ChatSide from "../chats/ChatSide";
-import db from '../firebase';
-
+import db from "../firebase";
 
 function Leftbar() {
-  const [rooms, setRooms] = useState([]);
+  const [chats, setChats] = useState([]);
 
   useEffect(() => {
     db.collection("chats").onSnapshot((snapshot) =>
-      setRooms(
+      setChats(
         snapshot.docs.map((doc) => ({
           id: doc.id,
           data: doc.data(),
         }))
       )
     );
-
-    
   }, []);
 
   return (
@@ -39,8 +36,8 @@ function Leftbar() {
 
       <div className="sidebar_chats">
         <ChatSide addNewChat />
-        {rooms.map((room) => (
-          <ChatSide key={room.id} id={room.id} name={room.data.name} />
+        {chats.map((chat) => (
+          <ChatSide key={chat.id} id={chat.id} user={chat.data.user} />
         ))}
       </div>
     </div>
