@@ -19,7 +19,7 @@ function ChatSide({ id, name, addNewChat }) {
       content: "input",
     }).then((roomName) => {
       if (roomName) {
-        db.collection("chats").add({
+        db.collection("rooms").add({
           name: roomName,
         });
       }
