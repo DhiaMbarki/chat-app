@@ -1,4 +1,3 @@
-import { Db } from "@material-ui/icons";
 import firebase from "firebase"
 
 const firebaseConfig = {
@@ -17,4 +16,4 @@ const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 
 
-export default Db;
+export default db;
