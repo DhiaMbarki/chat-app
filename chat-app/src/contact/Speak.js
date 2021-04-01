@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "./speak.css";
 import { Avatar, IconButton } from "@material-ui/core";
-import { Message, MoreVert, SearchOutlined } from "@material-ui/icons";
+import { InsertEmoticon, } from "@material-ui/icons";
+import MicIcon from "@material-ui/icons/Mic";
+
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 import CallIcon from "@material-ui/icons/Call";
 function Speak() {
   const [seed, setSeed] = useState("");
+  const [input, setInput] = useState("");
+
 
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
   }, []);
+  
+  const sendMessage = (e) => {
+    e.preventDefault();
+    console.log("Hey you ", input);
+    }
+
+   
+
 
   return (
     <div className="chat">
@@ -39,7 +51,14 @@ function Speak() {
                     </p>
                 
             </div>
-      <div className="chat_footer"></div>
+      <div className="chat_footer">
+        <InsertEmoticon/>
+        <form>
+        <input value={input} onChange={(e) => setInput(e.target.value)} type="text" placeholder="Type a message"/>
+          <button onClick={sendMessage} type="submit">Send a message</button>
+        </form>
+        <MicIcon/>
+      </div>
     </div>
   );
 }
