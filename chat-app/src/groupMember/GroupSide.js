@@ -7,7 +7,7 @@ import db from "../firebase";
 import {Link} from 'react-router-dom';
 
 
-function ChatSide({ id, user, addNewChat }) {
+function ChatSide({ id, name, addNewChat }) {
   const [seed, setSeed] = useState("");
 
   useEffect(() => {
@@ -20,18 +20,18 @@ function ChatSide({ id, user, addNewChat }) {
     }).then((roomName) => {
       if (roomName) {
         db.collection("chats").add({
-          user: roomName,
+          name: roomName,
         });
       }
     });
   };
 
   return !addNewChat ? (
-    <Link to={`/chats/${id}`} key={id}>
+    <Link to={`/rooms/${id}`} key={id}>
     <div className="sidebarChat">
       <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`} />
       <div className="sidebarChat_info">
-        <h2>{user}</h2>
+        <h2>{name}</h2>
         <p>message ...</p>
       </div>
     </div>

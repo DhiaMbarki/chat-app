@@ -6,27 +6,31 @@ import ChatSide from "../groupMember/GroupSide";
 import db from "../firebase";
 
 function Leftbar() {
-  const [chats, setChats] = useState([]);
+  const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-  const dumb =  db.collection("chats").onSnapshot((snapshot) =>
-      setChats(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
+    const dumb = db.collection('rooms').onSnapshot(snapshot => (
+      setRooms(snapshot.docs.map(doc => (
+          {
+              id: doc.id,
+              data: doc.data()
+          }
       )
-    );
-    return () => {
+
+      ))
+  ));
+
+  return () => {
       dumb();
-    }
-  }, []);
+  }
+},[]); 
+
 
   return (
     <div className="sidebar">
       <div className="sidebar_header">
         <div className="">
-          {" "}
+          
           <Avatar />
         </div>
       </div>
@@ -39,9 +43,9 @@ function Leftbar() {
 
       <div className="sidebar_chats">
         <ChatSide addNewChat />
-        {chats.map((chat) => (
-          <ChatSide key={chat.id} id={chat.id} user={chat.data.user} />
-        ))}
+        {rooms.map(room=> (
+                    <ChatSide key={room.id} id={room.id} name={room.data.name}/>
+                ))}
       </div>
     </div>
   );

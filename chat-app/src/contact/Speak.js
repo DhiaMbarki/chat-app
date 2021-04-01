@@ -4,6 +4,7 @@ import { Avatar, IconButton } from "@material-ui/core";
 import { InsertEmoticon, } from "@material-ui/icons";
 import MicIcon from "@material-ui/icons/Mic";
 import { useParams } from 'react-router-dom';
+import db from '../firebase';
 
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 import CallIcon from "@material-ui/icons/Call";
@@ -11,6 +12,8 @@ function Speak() {
   const [seed, setSeed] = useState("");
   const [input, setInput] = useState("");
   const {roomId} = useParams();
+  const [roomName, setRoomName] = useState("");
+  const [messages, setMessages] = useState([]);
 
 
   useEffect(() => {
@@ -23,7 +26,17 @@ function Speak() {
     setInput("")
     }
 
-   
+    useEffect(()=>{
+      if(roomId){
+          db.collection('rooms').doc(roomId).onSnapshot(snapshot => {
+              setRoomName(snapshot.data().name);
+          });
+
+          
+
+      }
+  },[roomId])
+
 
 
   return (
@@ -31,7 +44,7 @@ function Speak() {
       <div className="chat_header">
         <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`} />
         <div className="chat_headerInfo">
-          <h3>Romm name ⬇️</h3>
+          <h3>{roomName}</h3>
           <p>Last view at ...</p>
         </div>
 
