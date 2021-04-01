@@ -18,6 +18,7 @@ function Speak() {
   const sendMessage = (e) => {
     e.preventDefault();
     console.log("Hey you ", input);
+    setInput("")
     }
 
    
@@ -52,12 +53,14 @@ function Speak() {
                 
             </div>
       <div className="chat_footer">
-        <InsertEmoticon/>
+      <MicIcon/>
+
         <form>
         <input value={input} onChange={(e) => setInput(e.target.value)} type="text" placeholder="Type a message"/>
           <button onClick={sendMessage} type="submit">Send a message</button>
         </form>
-        <MicIcon/>
+        <InsertEmoticon/>
+
       </div>
     </div>
   );

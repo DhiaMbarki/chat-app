@@ -9,7 +9,7 @@ function Leftbar() {
   return (
     <div className="sidebar">
        <div className="sidebar_header">
-        <Avatar />
+       <div className=""> <  Avatar /></div>
       
       </div>
       <div className="sidebar_search">
