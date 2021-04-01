@@ -3,12 +3,14 @@ import "./speak.css";
 import { Avatar, IconButton } from "@material-ui/core";
 import { InsertEmoticon, } from "@material-ui/icons";
 import MicIcon from "@material-ui/icons/Mic";
+import { useParams } from 'react-router-dom';
 
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 import CallIcon from "@material-ui/icons/Call";
 function Speak() {
   const [seed, setSeed] = useState("");
   const [input, setInput] = useState("");
+  const {roomId} = useParams();
 
 
   useEffect(() => {

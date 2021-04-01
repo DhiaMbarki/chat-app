@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./leftbar.css";
 import { Avatar } from "@material-ui/core";
 import { SearchOutlined } from "@material-ui/icons";
-import ChatSide from "../chats/ChatSide";
+import ChatSide from "../groupMember/GroupSide";
 import db from "../firebase";
 
 function Leftbar() {
   const [chats, setChats] = useState([]);
 
   useEffect(() => {
-    db.collection("chats").onSnapshot((snapshot) =>
+  const dumb =  db.collection("chats").onSnapshot((snapshot) =>
       setChats(
         snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -17,6 +17,9 @@ function Leftbar() {
         }))
       )
     );
+    return () => {
+      dumb();
+    }
   }, []);
 
   return (
