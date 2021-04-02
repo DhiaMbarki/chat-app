@@ -4,26 +4,32 @@ import { Avatar } from "@material-ui/core";
 import { SearchOutlined } from "@material-ui/icons";
 import ChatSide from "../groupMember/GroupSide";
 import db from "../firebase";
+import { useStateValue } from '../StateProvider';
+
 
 function Leftbar() {
-  const [rooms, setRooms] = useState([]);
+   const [rooms, setRooms] = useState([]);
+  const [{user},dispatch] = useStateValue();
 
   useEffect(() => {
-    const dumb = db.collection('rooms').onSnapshot(snapshot => (
-      setRooms(snapshot.docs.map(doc => (
-          {
-              id: doc.id,
-              data: doc.data()
-          }
-      )
+      const dumb = db.collection('rooms').onSnapshot(snapshot => (
+          setRooms(snapshot.docs.map(doc => (
+              {
+                  id: doc.id,
+                  data: doc.data()
+              }
+          )
 
-      ))
-  ));
+          ))
+      ));
 
-  return () => {
-      dumb();
-  }
-},[]); 
+      return () => {
+          dumb();
+      }
+  },[]); 
+
+
+  
 
 
   return (
@@ -31,7 +37,7 @@ function Leftbar() {
       <div className="sidebar_header">
         <div className="">
           
-          <Avatar />
+          <Avatar src={user?.photoURL} />
         </div>
       </div>
       <div className="sidebar_search">
