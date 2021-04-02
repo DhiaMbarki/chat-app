@@ -6,6 +6,7 @@ import MicIcon from "@material-ui/icons/Mic";
 import { useParams } from 'react-router-dom';
 import db from '../firebase';
 import {useStateValue} from "../StateProvider";
+import firebase from 'firebase';
 
 
 import VideoCallIcon from "@material-ui/icons/VideoCall";
@@ -26,9 +27,14 @@ function Speak() {
   
   const sendMessage = (e) => {
     e.preventDefault();
-    console.log("Hey you ", input);
-    setInput("")
-    }
+    db.collection('rooms').doc(roomId).collection('messages').add({
+        message: input,
+        name: user.displayName,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    })
+
+    setInput("");
+}
 
     useEffect(()=>{
       if(roomId){
@@ -51,9 +57,14 @@ function Speak() {
       <div className="chat_header">
         <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`} />
         <div className="chat_headerInfo">
-          <h3>{roomName}</h3>
-          <p>Last view at ...</p>
-        </div>
+        <h3 className='chat-room-name'>{roomName}</h3>
+          <p className='chat-room-last-seen'>
+                        Last seen {" "}
+                        {new Date(
+                            messages[messages.length - 1]?.
+                            timestamp?.toDate()
+                        ).toUTCString()}
+                    </p>        </div>
 
         <div className="chat_headerRight">
           <IconButton>
