@@ -25,7 +25,7 @@ function ChatSide({ id, name, addNewChat }) {
   }, []);
 
   const createChat = () => {
-    const roomName = swal("Write something here:", {
+    const roomName = swal("start your room chat here :)", {
       content: "input",
     }).then((roomName) => {
       if (roomName) {

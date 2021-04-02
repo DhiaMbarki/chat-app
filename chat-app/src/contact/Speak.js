@@ -55,7 +55,9 @@ function Speak() {
   return (
     <div className="chat">
       <div className="chat_header">
+        <div className="mov">
         <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`} />
+        </div>
         <div className="chat_headerInfo">
         <h3 className='chat-room-name'>{roomName}</h3>
           <p className='chat-room-last-seen'>
@@ -80,6 +82,7 @@ function Speak() {
       <div className='chat_body'>
                 
       {messages.map(message => (
+        
                     <p className={`chat_message ${ message.name === user.displayName && 'chat_receiver'}`}>
                         <span className="chat_name">{message.name}</span>
                         {message.message}
