@@ -4,16 +4,17 @@ import Speak from "./contact/Speak";
 import Sidebar from "./leftebar/Leftbar";
 import { BrowserRouter as Router,Switch, Route} from 'react-router-dom';
 import Login from './login/Login';
+import {useStateValue} from './StateProvider';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [{user}, dispatch] = useStateValue();
 
   return (
     <div className="app">
               {!user ? (
 <Login/>
         ):(
-      <div className="app__body">
+      <div className="body">
         <Router>
         <Sidebar />
           <Switch>

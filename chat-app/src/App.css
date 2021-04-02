@@ -6,7 +6,7 @@
   height: 100vh;
 
 }
-.app__body {
+.body {
   display: flex;
   background-color: #ededed;
   height: 90vh;
