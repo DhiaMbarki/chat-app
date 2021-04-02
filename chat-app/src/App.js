@@ -11,12 +11,11 @@ function App() {
   return (
     <div className="app">
               {!user ? (
-          <h1>login</h1>
+<Login/>
         ):(
       <div className="app__body">
         <Router>
         <Sidebar />
-
           <Switch>
             <Route path="/rooms/:roomId">
               <Speak />
@@ -29,7 +28,7 @@ function App() {
           </Switch>
         </Router>
       </div>
-        )}
+      )}
     </div>
   );
 }

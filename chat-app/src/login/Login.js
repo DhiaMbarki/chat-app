@@ -13,9 +13,10 @@ function Login() {
     return (
         <div className="login">
            <div className="login_container">
-               <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt=""/> 
+               <img src="https://images-eu.ssl-images-amazon.com/images/I/31KlpCJs-JL.png" alt=""/> 
                 <div className="login_text">
-                    <h1>Sign in to chat-app</h1>
+                    <h1>Cₕₐₜ wᵢₜₕ ₛₜᵣₐₙgₑᵣₛ ₐₙd bₑcₒₘₑ fᵣᵢₑₙdₛ! ..
+</h1>
                 </div>
                 <Button type="submit" onClick={signIn}>Sign in With Google</Button>
            </div>
