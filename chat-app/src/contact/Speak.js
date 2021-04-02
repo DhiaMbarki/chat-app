@@ -59,12 +59,13 @@ function Speak() {
         <div className="chat_headerInfo">
         <h3 className='chat-room-name'>{roomName}</h3>
           <p className='chat-room-last-seen'>
-                        Last seen {" "}
+                         {" "}
                         {new Date(
                             messages[messages.length - 1]?.
                             timestamp?.toDate()
                         ).toUTCString()}
-                    </p>        </div>
+                    </p>      
+                      </div>
 
         <div className="chat_headerRight">
           <IconButton>

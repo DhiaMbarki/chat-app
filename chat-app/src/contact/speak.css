@@ -52,10 +52,12 @@
 .chat_message{
     position: relative;
     font-size: 16px;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 10px;
     background-color: white;
     width: fit-content;
+
+    
 }
 
 .chat_name{
@@ -73,6 +75,7 @@
 .chat_receiver{
     margin-left: auto;
     background-color: #dcf8c6;
+
 }
 
 .chat_footer{
