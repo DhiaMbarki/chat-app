@@ -5,6 +5,8 @@ import { InsertEmoticon, } from "@material-ui/icons";
 import MicIcon from "@material-ui/icons/Mic";
 import { useParams } from 'react-router-dom';
 import db from '../firebase';
+import {useStateValue} from "../StateProvider";
+
 
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 import CallIcon from "@material-ui/icons/Call";
@@ -14,6 +16,8 @@ function Speak() {
   const {roomId} = useParams();
   const [roomName, setRoomName] = useState("");
   const [messages, setMessages] = useState([]);
+  const [{user}, dispatch] = useStateValue();
+
 
 
   useEffect(() => {
@@ -31,6 +35,9 @@ function Speak() {
           db.collection('rooms').doc(roomId).onSnapshot(snapshot => {
               setRoomName(snapshot.data().name);
           });
+          db.collection('rooms').doc(roomId).collection("messages").orderBy("timestamp","asc").onSnapshot(snapshot => {
+            setMessages(snapshot.docs.map(doc => doc.data()))
+        });
 
           
 
@@ -60,11 +67,13 @@ function Speak() {
       </div>
       <div className='chat_body'>
                 
-                    <p className={`chat_message ${ true && 'chat_receiver'}`}>
-                        <span className="chat_name">Dhia Mbarki</span>
-                        yala yala I m here
-                        <span className="chat_timestemp">5:40pm</span>
+      {messages.map(message => (
+                    <p className={`chat_message ${ message.name === user.displayName && 'chat_receiver'}`}>
+                        <span className="chat_name">{message.name}</span>
+                        {message.message}
+                        <span className="chat_timestemp">{new Date(message.timestamp?.toDate()).toUTCString()}</span>
                     </p>
+                ))}
                 
             </div>
       <div className="chat_footer">
