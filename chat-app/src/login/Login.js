@@ -18,7 +18,9 @@ function Login() {
             })
             .catch((error) => alert(error.message));
     }
+    
     return (
+        
         <div className="login">
            <div className="login_container">
                <img src="https://images-eu.ssl-images-amazon.com/images/I/31KlpCJs-JL.png" alt=""/> 

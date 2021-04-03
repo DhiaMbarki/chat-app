@@ -48,7 +48,7 @@ function Leftbar() {
       </div>
 
       <div className="sidebar_chats">
-        <ChatSide addNewChat />
+        <ChatSide addNewChat className="big"/>
         {rooms.map(room=> (
                     <ChatSide key={room.id} id={room.id} name={room.data.name}/>
                 ))}

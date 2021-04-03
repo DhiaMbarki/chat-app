@@ -95,7 +95,7 @@ function Speak() {
       <MicIcon/>
 
         <form>
-        <input value={input} onChange={(e) => setInput(e.target.value)} type="text" placeholder="Type a message"/>
+        <input value={input} onChange={(e) => setInput(e.target.value)} type="text" placeholder="send a message..."/>
           <button onClick={sendMessage} type="submit">Send a message</button>
         </form>
         <InsertEmoticon/>
