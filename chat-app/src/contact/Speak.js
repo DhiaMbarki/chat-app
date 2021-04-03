@@ -56,7 +56,6 @@ function Speak() {
     <div className="chat">
       <div className="chat_header">
         <div className="mov">
-        <Avatar src={`https://avatars.dicebear.com/api/bottts/${seed}.svg`} />
         </div>
         <div className="chat_headerInfo">
         <h3 className='chat-room-name'>{roomName}</h3>

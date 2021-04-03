@@ -7,7 +7,7 @@ import db from "../firebase";
 import {Link} from 'react-router-dom';
 
 
-function ChatSide({ id, name, addNewChat }) {
+function GroupSide({ id, name, addNewChat }) {
   const [seed, setSeed] = useState("");
   const [messages, setMessages] = useState("");
 
@@ -56,4 +56,4 @@ function ChatSide({ id, name, addNewChat }) {
   );
 }
 
-export default ChatSide;
+export default GroupSide;

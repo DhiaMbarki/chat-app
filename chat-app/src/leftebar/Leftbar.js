@@ -35,7 +35,7 @@ function Leftbar() {
   return (
     <div className="sidebar">
       <div className="sidebar_header">
-        <div className="move">
+        <div className="">
           
           <Avatar src={user?.photoURL} />
         </div>

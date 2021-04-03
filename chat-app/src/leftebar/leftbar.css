@@ -5,6 +5,9 @@
   background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
   border-right: 1px solid rgb(192, 190, 190);
   border: 1px solid rgb(17, 16, 16);
+  float: left;
+  text-align: left;
+  margin-top: 1px;
 }
 
 .sidebar_searchContainer > input {
@@ -22,14 +25,11 @@
 }
 
 .sidebar_header {
-  display: flex;
-  justify-content: space-between;
-  padding: 24px;
   position: relative;
-  bottom: -1px;
+  bottom: 40px;
+  margin-top: 18px;
 
-  border-bottom: 1px solid #f6f6f6;
-  margin-left: 200px;
+  margin-left: 240px;
 }
 
 .sidebar_headerRight {
